@@ -59,6 +59,20 @@ font-family: Arial;
     padding: 0 5px;
 }
 
+*{
+    box-sizing: border-box;
+}
+
+
+
+/* Main page */
+
+.main{
+    display: flex;
+    padding-top: 120px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
 
 

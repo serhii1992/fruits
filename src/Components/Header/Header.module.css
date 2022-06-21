@@ -4,7 +4,7 @@
   left: 0;
   width: 100%;
   background-color: #f9f9f9;
-  padding: 10px;
+  padding: 10px 0;
 }
 
 .header {
@@ -103,7 +103,7 @@
     border-radius: 50%;
     margin: 9px auto;
     background-color: #fff;
-    color: #000;
+    color: red;
     font-size: 16px;
     font-weight: 500;
     text-align: center;
