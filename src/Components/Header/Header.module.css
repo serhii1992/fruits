@@ -30,58 +30,11 @@
   height: 70px;
 }
 
-/* catalog */
 
-.catalog {
-  position: relative;
-  padding: 19px 40px 19px 50px;
-  background-color: #5ed0d5;
-  opacity: 0.9;
-  text-transform: uppercase;
-  border-radius: 10px;
-}
 
-.catalog img {
-  height: 20px;
-  position: absolute;
-  top: 12px;
-  left: 26px;
-}
 
-/* search */
 
-.search {
-  position: relative;
-}
 
-.search input {
-  width: 400px;
-  border: 1px solid#5ed0d5;
-  padding: 15px 15px 15px 40px;
-  font-size: 18px;
-  border-radius: 10px;
-}
-
-.searchIcon {
-  width: 23px;
-  position: absolute;
-  top: 28%;
-  left: 3%;
-  opacity: 0.5;
-}
-
-.closeIcon {
-  width: 23px;
-  position: absolute;
-  top: 28%;
-  right: 3%;
-  cursor: pointer;
-}
-
-.closeIcon:hover {
-  stroke: red;
-  fill: red;
-}
 
 /* cartButton */
 .cartButton {
