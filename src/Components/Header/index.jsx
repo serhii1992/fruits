@@ -1,8 +1,8 @@
 import style from "./Header.module.css";
 import logo from "../../assets/img/logo.png";
-import cart from "../../assets/img/cart.png";
 import MyInput from "../MyInput";
 import Catalog from "../Catalog";
+import CartButton from "../CartButton";
 
 function Header() {
   return (
@@ -14,16 +14,7 @@ function Header() {
         </div>
         <Catalog/>
         <MyInput/>
-        <div className={style.cartButton}>
-          <div className={style.count}>
-            <div>3</div>
-            <img className={style.cartIcon} src={cart} alt="cart" />
-          </div>
-          <div className={style.totalCount}>
-            <div>Cart</div>
-            <div>0.00 $</div>
-          </div>
-        </div>
+        <CartButton/>
       </div>
     </div>
   );

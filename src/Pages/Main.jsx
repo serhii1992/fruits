@@ -1,23 +1,18 @@
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import FruitItem from "../Components/FruitItem";
-import { fetchGoods } from "../Redux/goodsSlice";
+
 import Loader from "../Components/Loader";
 
 function Main() {
-  const dispatch = useDispatch();
-  const { goods, status } = useSelector((state) => state.goodsReducer);
+  const { goods, status, selectedCategory } = useSelector((state) => state.goodsReducer);
   console.log(status);
 
-  useEffect(() => {
-    dispatch(fetchGoods());
-  }, []);
-
   return (
-    <div className="main container">
-
-      {status === 'loading' && <Loader/>}
-      {goods.map((el) =>
+    <div className="container main">
+      <h1 className="mainTitle" >{selectedCategory === "all" ? selectedCategory + ' goods' :  selectedCategory}</h1>
+      <div className="content">
+        {status === "loading" && <Loader />}
+        {goods.map((el) => (
           <FruitItem
             key={el.id}
             name={el.name}
@@ -26,8 +21,8 @@ function Main() {
             price={el.price}
             srcImg={el.srcImg}
           />
-        
-       )}
+        ))}
+      </div>
     </div>
   );
 }
