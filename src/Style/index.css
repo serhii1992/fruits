@@ -63,7 +63,10 @@ font-family: Arial;
     box-sizing: border-box;
 }
 
-
+a {
+    color: #000 !important;
+    text-decoration: none
+  }
 
 /* Main page */
 
@@ -84,6 +87,31 @@ font-family: Arial;
     text-transform: uppercase;
     color: #5ed0d5;
 }
+
+/* Cart page */
+.cartWrapper{
+    font-family: Arial, Helvetica, sans-serif serif;
+    padding-top: 110px;
+}
+
+.emptyCart{
+    background-color: whitesmoke;
+    padding: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+}
+
+.totalCart{
+
+    background-color: whitesmoke;
+    padding: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
 
 /* Loader*/
 

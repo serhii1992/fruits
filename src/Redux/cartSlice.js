@@ -1,48 +1,26 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
-// create the thunk
-export const fetchGoods = createAsyncThunk("godds/fetchGoods", async (options) => {
-  let category = (options !== "all") ? `?category=${options} ` : ``
-  const { data } = await axios.get(`https://62b1d472c7e53744afc23bf8.mockapi.io/fruits${category}`);
-
-  return data
-});
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  status: "loading",
   goods: [],
-  category: ["all", "fruit", "vegetables"],
-  selectedCategory: "all"
 };
 
-export const goodsSlice = createSlice({
-  name: "goods",
+export const cartSlice = createSlice({
+  name: "cart",
   initialState,
   reducers: {
-    setSelectedCategory(state, action) {
-      state.selectedCategory = action.payload;
+    addToCart(state, action) {
+      if (!state.goods.find((el) => el.name === action.payload.name ) && action.payload.hasOwnProperty('name')) {
+        state.goods = [...state.goods, action.payload];
+      }
     },
-  },
-  extraReducers: {
-    [fetchGoods.pending]: (state) => {
-     
-      state.goods = [];
-      state.status = "loading";
+    removeItemIncart(state, action) {
+      debugger
+      state.goods = state.goods.filter((el) => el.name !== action.payload);
+      debugger
     },
-
-    [fetchGoods.fulfilled]: (state, action) => {
-      state.goods = action.payload;
-      state.status = "success";
-    },
-
-    [fetchGoods.rejected]: (state) => {
-      state.status = "error";
-      state.items = [];
-    }
   },
 });
 
-export const { setSelectedCategory } = goodsSlice.actions;
+export const { addToCart, removeItemIncart } = cartSlice.actions;
 
-export default goodsSlice.reducer;
+export default cartSlice.reducer;

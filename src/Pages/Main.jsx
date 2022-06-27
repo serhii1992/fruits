@@ -1,11 +1,9 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import FruitItem from "../Components/FruitItem";
-
 import Loader from "../Components/Loader";
 
 function Main() {
   const { goods, status, selectedCategory } = useSelector((state) => state.goodsReducer);
-  console.log(status);
 
   return (
     <div className="container main">
@@ -16,10 +14,10 @@ function Main() {
           <FruitItem
             key={el.id}
             name={el.name}
-            sale={el.sale}
-            category={el.category}
             price={el.price}
             srcImg={el.srcImg}
+            minOrder={el.minOrder}
+            sale={el.sale}
           />
         ))}
       </div>

@@ -1,56 +1,104 @@
-.wrapper{
-    font-family: Montserrat,sans-serif;
-    width: calc((100% - 60px) / 4);
-    background-color: #f9f9f9;
-    overflow: hidden;
-    cursor: pointer;
+.wrapper {
+  position: relative;
+  font-family: Montserrat, sans-serif;
+  width: calc((100% - 60px) / 4);
+  background-color: #f9f9f9;
+  overflow: hidden;
+  cursor: pointer;
 }
 
-
-.wrapper:hover{
-    box-shadow: 3px 10px 20px -8px rgba(0,0,0,0.78);
+.wrapper:hover {
+  box-shadow: 3px 10px 20px -8px rgba(0, 0, 0, 0.78);
 }
 
-.imgBlok{
-    height: 250px;
-    display: flex;
-    align-items: center;
+.imgBlok {
+  height: 250px;
+  display: flex;
+  align-items: center;
 }
 
-.imgBlok img{
-    width: 100%;
+.imgBlok img {
+  width: 100%;
 }
 
-.contentBlock{
-    padding: 20px;
+.contentBlock {
+  padding: 20px;
 }
 
-.name{
-
-    font-weight: 700;
-    color: #272727;
-    line-height: 1rem;
-    font-size: 22px;
+.name {
+  font-weight: 700;
+  color: #272727;
+  line-height: 1rem;
+  font-size: 22px;
 }
 
-.pricePerKg{
-    margin-top: 14px;
-    color: #8a8a8a;
-    font-size: 14px;
+.pricePerKg {
+  margin-top: 14px;
+  color: #8a8a8a;
+  font-size: 14px;
 }
 
-.price{
-    margin-top: 7px;
-    color: #272727;
-    font-size: 16px;
+.price {
+  margin-top: 7px;
+  color: #272727;
+  font-size: 16px;
 }
 
-.btn{
-    margin-top: 20px;
-    width: 100%;
-    border: none;
-    padding: 15px;
-    text-transform: uppercase;
-    background: #5ed0d5;
-    cursor: pointer;
+.couterBlock {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.totalBlock {
+  align-items: center;
+  margin: 0 0 15px 30px;
+}
+
+.totalBlockText {
+  font-size: 14px;
+  color: #8a8a8a;
+}
+
+.totalBlockPrice {
+  margin-top: 5px;
+  font-size: 16px;
+  color: #272727;
+  font-weight: 600;
+}
+
+.buttonToAdd {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  padding: 15px;
+  text-transform: uppercase;
+  background: #5ed0d5;
+  cursor: pointer;
+}
+
+.buttonToCart {
+  margin-top: 20px;
+  width: 100%;
+  border: none;
+  padding: 15px;
+  text-transform: uppercase;
+  background: goldenrod;
+  cursor: pointer;
+}
+
+.saleBlock {
+  color: red;
+  width: 200px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 190px;
+  left: 50%;
+  transform: translateX(-50%) rotate(30deg);
+  text-align: center;
+  font-weight: 700;
+  background-color: rgb(227, 79, 79, 0.8);
+border-radius: 30px;
+  padding: 10px;
+
 }

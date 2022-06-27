@@ -5,10 +5,9 @@ import style from "./Catalog.module.css";
 
 function Catalog() {
   const dispatch = useDispatch();
-
   const [visibleModal, setVisibleModal] = useState(false);
-  
   const {category, selectedCategory} = useSelector( state => state.goodsReducer)
+
 
   useEffect(() => {
     dispatch(fetchGoods(selectedCategory))

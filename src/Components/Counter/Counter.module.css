@@ -1,13 +1,12 @@
 .wrapper {
-  margin-top: 15px;
   display: flex;
+  flex-direction: column;
   align-items: center;
 }
 
 .counterBlock {
   display: flex;
   align-items: center;
-  width: 120px;
   height: 50px;
 }
 
@@ -17,13 +16,18 @@
   margin-left: 7px;
 }
 
-.inc {
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+.minOrder{
+  color: #8a8a8a;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+.dec {
+  cursor: pointer;
   position: relative;
   min-width: 40px;
   height: 40px;
-  border: 1px solid green;
+  border: 1px solid #5ed0d5;
 }
 
 .count {
@@ -33,51 +37,41 @@
   min-width: 60px;
   height: 40px;
   line-height: 40px;
-  border-top: 1px solid green;
-  border-bottom: 1px solid green;
+  border-top: 1px solid #5ed0d5;
+  border-bottom: 1px solid #5ed0d5;
 }
 
-.count::after {
-  content: "min 0.2 kg";
-  position: absolute;
-  width: 65px;
-  font-size: 14px;
-  color: #8a8a8a;
-  bottom: -33px;
-  left: -9px;
-}
 
-.dec {
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+.inc {
+  cursor: pointer;
   position: relative;
   min-width: 40px;
   height: 40px;
-  border: 1px solid green;
+  border: 1px solid #5ed0d5;
 }
 
-.dec:before,
-.dec:after {
-  content: "";
-  position: absolute;
-  width: 24px;
-  height: 4px;
-  background: green;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.dec:after {
-  transform: translate(-50%, -50%) rotate(90deg);
-}
-
+.inc:before,
 .inc:after {
   content: "";
   position: absolute;
   width: 24px;
   height: 4px;
-  background: green;
+  background: #5ed0d5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inc:after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.dec:after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  height: 4px;
+  background: #5ed0d5;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -85,27 +79,14 @@
 
 .inc:hover,
 .dec:hover {
-  background-color: green;
+  background-color: teal;
 }
 
 .inc:hover.inc:after,
-.dec:hover.dec:before,
+.inc:hover.inc:before,
 .dec:hover.dec:after {
   background: white;
+  cursor: pointer;
 }
 
-.totalBlock {
-  margin-left: 60px;
-}
 
-.totalBlockText {
-  font-size: 14px;
-  color: #8a8a8a;
-}
-
-.totalBlockPrice {
-  margin-top: 5px;
-  font-size: 16px;
-  color: #272727;
-  font-weight: 600;
-}
