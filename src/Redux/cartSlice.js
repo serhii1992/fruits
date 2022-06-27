@@ -14,9 +14,7 @@ export const cartSlice = createSlice({
       }
     },
     removeItemIncart(state, action) {
-      debugger
       state.goods = state.goods.filter((el) => el.name !== action.payload);
-      debugger
     },
   },
 });

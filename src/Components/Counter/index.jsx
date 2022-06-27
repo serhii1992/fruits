@@ -1,5 +1,5 @@
-import { addToCart, removeItemIncart } from "../../Redux/cartSlice";
-import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../../Redux/cartSlice";
+import {useDispatch } from "react-redux";
 import styles from "./Counter.module.css";
 
 function Counter({ totalObj, calcSumm, ...itemKeys }) {

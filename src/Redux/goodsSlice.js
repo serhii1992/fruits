@@ -4,6 +4,7 @@ import axios from "axios";
 // create the thunk
 export const fetchGoods = createAsyncThunk("godds/fetchGoods", async (options) => {
   let category = (options !== "all") ? `?category=${options} ` : ``
+
   const { data } = await axios.get(`https://62b1d472c7e53744afc23bf8.mockapi.io/fruits${category}`);
 
   return data
