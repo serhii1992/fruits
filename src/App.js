@@ -10,6 +10,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<Main />} />
       </Routes>
     </div>
   );

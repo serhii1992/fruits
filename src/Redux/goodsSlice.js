@@ -6,6 +6,7 @@ export const fetchGoods = createAsyncThunk(
   async (options, { rejectWithValue }) => {
     try {
       const category = options !== "all" ? `?category=${options} ` : ``;
+      debugger
       const {data} = await  axios.get(
         `https://62b1d472c7e53744afc23bf8.mockapi.io/fruits${category}`
       );
