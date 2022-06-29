@@ -1,15 +1,22 @@
-import { useSelector, useDispatch } from "react-redux";
-import FruitItem from "../Components/FruitItem";
+import { useSelector } from "react-redux";
+import Catalog from "../Components/Catalog";
+import FruitItem from "../Components/Item";
 import Loader from "../Components/Loader";
 
 function Main() {
-  const { goods, status, selectedCategory } = useSelector((state) => state.goodsReducer);
+  const { goods, status, error, selectedCategory } = useSelector((state) => state.goodsReducer);
 
   return (
     <div className="container main">
-      <h1 className="mainTitle" >{selectedCategory === "all" ? selectedCategory + ' goods' :  selectedCategory}</h1>
+      <div className="mainHeader">
+        <h1 className="mainTitle">
+          {selectedCategory === "all" ? selectedCategory + " goods" : selectedCategory}
+        </h1>
+        <Catalog/>
+      </div>
       <div className="content">
         {status === "loading" && <Loader />}
+        {error && <div className="error">An error has occurred: {error}</div>}
         {goods.map((el) => (
           <FruitItem
             key={el.id}

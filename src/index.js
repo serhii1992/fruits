@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./Style/index.css";
+import "./style/index.css";
 import App from "./App";
-import { store } from "./Redux/Store";
+import { store } from "./redux/Store";
 import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
 

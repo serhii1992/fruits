@@ -1,20 +1,28 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-
+import axios from 'axios'
 // create the thunk
-export const fetchGoods = createAsyncThunk("godds/fetchGoods", async (options) => {
-  let category = (options !== "all") ? `?category=${options} ` : ``
-
-  const { data } = await axios.get(`https://62b1d472c7e53744afc23bf8.mockapi.io/fruits${category}`);
-
-  return data
-});
+export const fetchGoods = createAsyncThunk(
+  "godds/fetchGoods",
+  async (options, { rejectWithValue }) => {
+    try {
+      const category = options !== "all" ? `?category=${options} ` : ``;
+      const {data} = await  axios.get(
+        `https://62b1d472c7e53744afc23bf8.mockapi.io/fruits${category}`
+      );
+        debugger
+      return data;
+    } catch (error) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 const initialState = {
   status: "loading",
+  eror: null,
   goods: [],
   category: ["all", "fruit", "vegetables"],
-  selectedCategory: "all"
+  selectedCategory: "all",
 };
 
 export const goodsSlice = createSlice({
@@ -27,7 +35,6 @@ export const goodsSlice = createSlice({
   },
   extraReducers: {
     [fetchGoods.pending]: (state) => {
-     
       state.goods = [];
       state.status = "loading";
     },
@@ -37,10 +44,10 @@ export const goodsSlice = createSlice({
       state.status = "success";
     },
 
-    [fetchGoods.rejected]: (state) => {
-      state.status = "error";
-      state.items = [];
-    }
+    [fetchGoods.rejected]: (state, action) => {
+      state.status = "rejected";
+      state.error = action.payload;
+    },
   },
 });
 

@@ -1,10 +1,10 @@
-import { addToCart } from "../../Redux/cartSlice";
+import { addToCart } from "../../redux/cartSlice";
 import {useDispatch } from "react-redux";
 import styles from "./Counter.module.css";
 
-function Counter({ totalObj, calcSumm, ...itemKeys }) {
-
+function Counter({ totalObj, calcSum, ...itemKeys }) {
   const dispatch = useDispatch();
+  
   const addItemToCart = (obj) => {
     dispatch(addToCart(obj));
   };
@@ -16,7 +16,7 @@ function Counter({ totalObj, calcSumm, ...itemKeys }) {
           className={styles.dec}
           disabled={!totalObj || totalObj?.totalKg <= 0}
           onClick={() => {
-            calcSumm(-1);
+            calcSum(-1);
           }}
         ></button>
 
@@ -26,7 +26,7 @@ function Counter({ totalObj, calcSumm, ...itemKeys }) {
           className={styles.inc}
           onClick={() => {
             addItemToCart(itemKeys);
-            calcSumm(1);
+            calcSum(1);
           }}
         ></button>
         <span>kg</span>

@@ -24,6 +24,7 @@ function Cart() {
               price={el.price}
               srcImg={el.srcImg}
               minOrder={el.minOrder}
+              sale={el.sale}
             />
           ))}
 

@@ -1,7 +1,5 @@
 import style from "./Header.module.css";
 import logo from "../../assets/img/logo.png";
-import MyInput from "../MyInput";
-import Catalog from "../Catalog";
 import CartButton from "../CartButton";
 import {Link } from "react-router-dom";
 
@@ -14,8 +12,6 @@ function Header() {
             <img className={style.logoImg} src={logo} alt="logo" />
             <span>Fruits time</span>
           </div>
-          <Catalog />
-          <MyInput />
           <CartButton />
         </div>
       </Link>

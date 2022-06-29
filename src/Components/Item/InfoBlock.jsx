@@ -1,4 +1,4 @@
-import styles from "./FruitItem.module.css";
+import styles from "./Item.module.css";
 
 function InfoBlock({srcImg, price, name}) {
   return (

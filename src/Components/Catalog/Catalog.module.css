@@ -1,4 +1,5 @@
 .catalogWrapper {
+  z-index: 100;
     position: relative;
     width: 160px;
     background-color: #5ed0d5;

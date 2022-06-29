@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchGoods,  setSelectedCategory} from "../../Redux/goodsSlice";
+import { fetchGoods,  setSelectedCategory} from "../../redux/goodsSlice";
 import style from "./Catalog.module.css";
 
 function Catalog() {
