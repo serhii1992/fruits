@@ -8,7 +8,6 @@ function Catalog() {
   const [visibleModal, setVisibleModal] = useState(false);
   const {category, selectedCategory} = useSelector( state => state.goodsReducer)
 
-
   useEffect(() => {
     dispatch(fetchGoods(selectedCategory))
   }, [selectedCategory]);

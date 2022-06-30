@@ -1,6 +1,6 @@
 import Counter from "../Counter";
 import styles from "./Item.module.css";
-import {useDispatch } from "react-redux";
+
 
 import InfoBlock from "./InfoBlock";
 import { useCalcItem } from "../../hooks/useCalcItem";
@@ -24,8 +24,8 @@ function Item({ minOrder, srcImg, name, price, sale }) {
           sale={sale}
         />
         <div className={styles.totalBlock}>
-          <p className={styles.totalBlockText}>total price</p>
-          <p className={styles.totalBlockPrice}>{totalObj?.totalPrice?.toFixed(2) ?? 0} $</p>
+          <p className={styles.totalBlockText}>total<br/>price</p>
+          <p className={styles.totalBlockPrice}>{totalObj?.totalPrice?.toFixed(2) ?? "0.00"} $</p>
         </div>
       </div>
     </div>

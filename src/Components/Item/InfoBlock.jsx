@@ -9,8 +9,7 @@ function InfoBlock({srcImg, price, name}) {
 
       <div className={styles.contentBlock}>
         <p className={styles.name}>{name}</p>
-        <p className={styles.pricePerKg}>price per kg</p>
-        <p className={styles.price}>{price} $</p>
+        <p className={styles.pricePerKg}>price per kg: <span>{price}  $</span></p>
       </div>
     </div>
   );

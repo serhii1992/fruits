@@ -1,19 +1,20 @@
 .wrapper {
-  padding: 20px ;
+  padding: 10px;
   position: relative;
   font-family: Montserrat, sans-serif;
   width: calc((100% - 60px) / 4);
-  background-color: #f9f9f9;
+  background-color: #fff;
   overflow: hidden;
   cursor: pointer;
 }
+
 
 .wrapper:hover {
   box-shadow: 3px 10px 20px -8px rgba(0, 0, 0, 0.78);
 }
 
 .imgBlok {
-  height: 250px;
+  height: 190px;
   display: flex;
   align-items: center;
 }
@@ -22,9 +23,8 @@
   width: 100%;
 }
 
-
-
 .name {
+  padding-top: 15px;
   font-weight: 700;
   color: #272727;
   line-height: 1rem;
@@ -37,7 +37,7 @@
   font-size: 14px;
 }
 
-.price {
+.pricePerKg span {
   margin-top: 7px;
   color: #272727;
   font-size: 16px;
@@ -45,19 +45,21 @@
 
 .couterBlock {
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
 .totalBlock {
+  display: flex;
   align-items: center;
-  margin: 0 0 15px 30px;
+  margin: 0 0 15px 0 0;
 }
 
 .totalBlockText {
+  margin-right: 10px;
   font-size: 14px;
   color: #8a8a8a;
 }
-
 .totalBlockPrice {
   margin-top: 5px;
   font-size: 16px;
@@ -90,13 +92,92 @@
   width: 200px;
   text-transform: uppercase;
   position: absolute;
-  top: 190px;
+  top: 125px;
   left: 50%;
   transform: translateX(-50%) rotate(30deg);
   text-align: center;
   font-weight: 700;
   background-color: rgb(227, 79, 79, 0.8);
-border-radius: 30px;
+  border-radius: 30px;
   padding: 10px;
+}
 
+@media (max-width: 1180px) {
+  .totalBlockPrice {
+    font-size: 14px;
+  }
+  .totalBlockText {
+    display: none;
+  }
+}
+
+@media (max-width: 1024px) {
+  .imgBlok {
+    height: 150px;
+  }
+
+  .saleBlock {
+    font-size: 14px;
+    width: 150px;
+    top: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    width: calc((100% - 40px) / 3);
+  }
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    width: calc((100% - 20px) / 2);
+  }
+
+  .imgBlok {
+    height: 170px;
+  }
+
+  .totalBlockText {
+    display: block;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 570px) {
+  .totalBlockText {
+    display: none;
+  }
+
+  .imgBlok {
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .saleBlock {
+    font-size: 12px;
+    width: 120px;
+    top: 75px;
+  }
+}
+
+@media (max-width: 430px) {
+  .wrapper {
+    width: 100%;
+    margin: 0 25px 20px 25px;
+  }
+
+  .imgBlok {
+    height: 200px;
+  }
+  .totalBlockText {
+    display: block;
+  }
+
+  .saleBlock {
+    font-size: 14px;
+    width: 200px;
+    top: 75px;
+  }
 }

@@ -9,10 +9,10 @@ function Main() {
   return (
     <div className="container main">
       <div className="mainHeader">
-        <h1 className="mainTitle">
-          {selectedCategory === "all" ? selectedCategory + " goods" : selectedCategory}
-        </h1>
-        <Catalog/>
+        <div className="mainTitleBloc">
+          <h2>{selectedCategory === "all" ? selectedCategory + " goods" : selectedCategory}</h2>
+        </div>
+        <Catalog />
       </div>
       <div className="content">
         {status === "loading" && <Loader />}
