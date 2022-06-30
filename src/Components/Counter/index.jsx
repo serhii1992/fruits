@@ -14,7 +14,7 @@ function Counter({ totalObj, calcSum, ...itemKeys }) {
       <div className={styles.counterBlock}>
         <button
           className={styles.dec}
-          disabled={!totalObj || totalObj?.totalKg <= 0.000001}
+          disabled={!totalObj || totalObj?.totalKg <= 0.0}
           onClick={() => {
             calcSum(-1);
           }}
