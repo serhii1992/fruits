@@ -4,7 +4,7 @@ import CartItem from "../Components/CartItem";
 function Cart() {
   let totalItem = useSelector((state) => state.calcTotalReducer.totalItem);
   const goods = useSelector((state) => state.cartReducer.goods);
-
+debugger
   const { totalPriceItems } = useSelector((state) => state.calcTotalReducer);
   
   const isCartEmpty = totalItem.every((el) => !el.totalKg);
@@ -28,7 +28,7 @@ function Cart() {
             />
           ))}
 
-          <div className="totalCart"> Total in CART: {totalPriceItems}$</div>
+          <div className="totalCart"> Total in CART: {totalPriceItems.toFixed(2)}$</div>
         </>
       )}
     </div>

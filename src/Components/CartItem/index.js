@@ -7,8 +7,8 @@ import { useCalcItem } from "../../hooks/useCalcItem";
 
 function CartItem({ name, price, srcImg, minOrder, sale }) {
   const dispatch = useDispatch();
-  const [totalObj, calcSum] = useCalcItem({ name, price, srcImg, minOrder, sale });
-
+  const [totalObj, calcSum] = useCalcItem({ name, price, srcImg, sale, });
+debugger
   return (
     <div className={styles.wrapper}>
       <div className={styles.imgBlock}>
@@ -18,7 +18,7 @@ function CartItem({ name, price, srcImg, minOrder, sale }) {
       <div className={styles.content}>
         <div className={styles.counter}>
           <Counter minOrder={minOrder} totalObj={totalObj} calcSum={calcSum} />
-          <div className={styles.price}>x {totalObj?.price || "0"} $/kg</div>
+          <div className={styles.price}>x {totalObj?.price.toFixed(2) || "0"} $/kg</div>
         </div>
         <div className={styles.total}>
           <div> = {totalObj?.totalPrice?.toFixed(2) || "0.00"} $</div>

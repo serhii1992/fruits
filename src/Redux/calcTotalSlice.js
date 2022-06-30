@@ -7,23 +7,34 @@ const initialState = {
   totalKgItems: 0,
 };
 
+// coeff: 1
+// minOrder: 0.5
+// name: "Banana"
+// price: 10
+// sale: false
+// srcImg: "img/banana.jpg"
 
 export const calcTotalSlice = createSlice({
   name: "calcTotal",
   initialState,
   reducers: {
     calcTotalItem(state, action) {
-      const obj = state.totalItem.find((el) => el.name === action.payload.name);
+      debugger
+      const {coeff,minOrder,name,price} = action.payload
       const {discountCoeff, discountKg, everyKg}=action.payload?.sale
 
+      const obj = state.totalItem.find((el) => el.name === name);
+
       if (!obj) {
-        let totalKg = action.payload.minOrder 
-        let totalPrice = action.payload.price * totalKg
+        const totalKg = +minOrder.toFixed(2)
+        const totalPrice = price * totalKg
         state.totalItem = [...state.totalItem, { ...action.payload, totalKg,  totalPrice},
         ];
       } else {
-        obj.totalKg += obj.minOrder * action.payload.coeff;
-        obj.totalPrice = calcForSale(obj.totalKg, action.payload.price,discountKg, everyKg , discountCoeff  )
+
+        obj.totalKg += +obj.minOrder.toFixed(2) * coeff;
+
+        obj.totalPrice = calcForSale(obj.totalKg, price, discountKg, everyKg , discountCoeff )
       }
     },
 

@@ -1,6 +1,6 @@
 export const calcForSale = (kg, price, discountKg, everyKg, discountCoeff) => {
   const discountPrice = price * discountCoeff;
-
+debugger
   if (kg < everyKg || !everyKg) {
     return kg * price;
   } else {
