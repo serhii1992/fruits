@@ -1,12 +1,9 @@
 import Counter from "../Counter";
 import styles from "./Item.module.css";
-
-
 import InfoBlock from "./InfoBlock";
 import { useCalcItem } from "../../hooks/useCalcItem";
 
 function Item({ minOrder, srcImg, name, price, sale }) {
-
   const [totalObj, calcSum] = useCalcItem({ name, price, sale, minOrder });
 
   return (

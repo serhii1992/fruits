@@ -8,7 +8,7 @@ import { useCalcItem } from "../../hooks/useCalcItem";
 function CartItem({ name, price, srcImg, minOrder, sale }) {
   const dispatch = useDispatch();
   const [totalObj, calcSum] = useCalcItem({ name, price, srcImg, sale, });
-debugger
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.imgBlock}>

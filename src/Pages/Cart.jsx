@@ -2,12 +2,11 @@ import { useSelector } from "react-redux";
 import CartItem from "../Components/CartItem";
 
 function Cart() {
-  let totalItem = useSelector((state) => state.calcTotalReducer.totalItem);
+  const totalItem = useSelector((state) => state.calcTotalReducer.totalItem);
   const goods = useSelector((state) => state.cartReducer.goods);
-debugger
   const { totalPriceItems } = useSelector((state) => state.calcTotalReducer);
   
-  const isCartEmpty = totalItem.every((el) => !el.totalKg);
+  const isCartEmpty = totalItem.every((el) => !el.totalKg );
 
   return (
     <div className="cartWrapper container">

@@ -1,7 +1,7 @@
 import style from "./CartButton.module.css";
 import cart from "../../assets/img/cart.png";
 import {Link } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector} from "react-redux";
 
 function CartButton() {
 
