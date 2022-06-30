@@ -1,8 +1,8 @@
 import styles from "./CartItem.module.css";
 import Counter from "../Counter";
-import {useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { removeItemIncart } from "../../redux/cartSlice";
-import {calcTotalPriceAndKgItems, removeFromTotalItem} from "../../redux/calcTotalSlice";
+import { calcTotalPriceAndKgItems, removeFromTotalItem } from "../../redux/calcTotalSlice";
 import { useCalcItem } from "../../hooks/useCalcItem";
 
 function CartItem({ name, price, srcImg, minOrder, sale }) {
@@ -11,11 +11,11 @@ function CartItem({ name, price, srcImg, minOrder, sale }) {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.item}>
-        <div className={styles.imgBlock}>
-          <img src={srcImg} />
-          <span>{name}</span>
-        </div>
+      <div className={styles.imgBlock}>
+        <img src={srcImg} />
+        <span>{name}</span>
+      </div>
+      <div className={styles.content}>
         <div className={styles.counter}>
           <Counter minOrder={minOrder} totalObj={totalObj} calcSum={calcSum} />
           <div className={styles.price}>x {totalObj?.price || "0"} $/kg</div>

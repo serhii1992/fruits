@@ -1,63 +1,64 @@
-.wrapper{
-    margin-top: 10px;
-    background-color: #fff;
+.wrapper {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  background-color: #fff;
+  border-bottom: 4px solid rgb(146, 141, 134, 0.5);
 }
 
-.item{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 4px solid rgb(146, 141, 134, 0.5);
-    padding: 10px;
+.imgBlock {
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-grow: 1;
 }
 
-.imgBlock{
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.imgBlock img {
+  width: 150px;
 }
 
-.imgBlock img{
-    width: 150px;
+.imgBlock span {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 20px;
 }
 
-.imgBlock span{
-    font-size: 20px;
-    font-weight: 700;
-    margin-left: 20px;
-    width: 100px;
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 2;
 }
 
-.counter{
-    font-size: 18px;
-    display: flex;
-    align-items: center;
+.counter {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
 }
 
-
-.price{
-    margin-left: 15px;
-    color: #8a8a8a;
-    width: 100px;
+.price {
+  font-size: 16px;
+  margin-left: 15px;
+  color: #8a8a8a;
+  width: 70px;
 }
-.total{
-    width: 150px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    display: flex;
-    font-size: 18px;
-    font-weight: 700;
+.total {
+  width: 113px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  font-size: 18px;
+  font-weight: 700;
 }
 
-.close{
-    margin-left: 15px;
-    margin-right: 15px;
-    position: relative;
-    width: 25px;
-    height: 25px;
-cursor: pointer;
+.close {
+  margin: 0 5px;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 }
 
 .close:before,
@@ -72,14 +73,64 @@ cursor: pointer;
   transform: translate(-50%, -50%);
 }
 
-.close:before{
-    transform: translate(-50%, -50%) rotate(-45deg)
+.close:before {
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-.close:after{
-    transform: translate(-50%, -50%) rotate(45deg)
+.close:after {
+  transform: translate(-50%, -50%) rotate(45deg);
 }
 
-.close:hover{
-    background-color: red;
+.close:hover {
+  background-color: red;
+}
+
+@media (max-width: 1180px) {
+  .price {
+    font-size: 16px;
+    font-size: 14px;
+  }
+  .total {
+    font-size: 16px;
+  }
+  .close:before,
+  .close:after {
+    width: 16px;
+    height: 2px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .total {
+    font-size: 14px;
+    width:90px;
+  }
+  .close {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .imgBlock span {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 700px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 570px) {
+}
+
+@media (max-width: 480px) {
+}
+
+@media (max-width: 430px) {
+
+
 }
