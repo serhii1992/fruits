@@ -4,7 +4,6 @@ import {Link } from "react-router-dom";
 import { useSelector} from "react-redux";
 
 function CartButton() {
-
   const {totalKgItems, totalPriceItems} = useSelector(state=> state.calcTotalReducer)
 
   return (

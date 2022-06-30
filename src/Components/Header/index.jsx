@@ -14,7 +14,6 @@ const dispatch = useDispatch()
         <div 
         className={[style.header, "container"].join(" ")}
         onClick = {()=>{dispatch(setSelectedCategory('all'))}}>
-        
           <div className={style.logo}>
             <img className={style.logoImg} src={logo} alt="logo" />
             <span>Fruits time</span>
