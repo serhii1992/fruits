@@ -43,10 +43,11 @@
   font-size: 16px;
   margin-left: 15px;
   color: #8a8a8a;
-  width: 90px;
+  min-width: 70px;
 }
 .total {
-  width: 113px;
+  min-width: 113px;
+  max-width: 133px;
   display: flex;
   align-items: center;
   position: relative;
@@ -86,6 +87,10 @@
   background-color: red;
 }
 
+
+
+
+
 @media (max-width: 1180px) {
   .price {
     font-size: 16px;
@@ -104,7 +109,7 @@
 @media (max-width: 1024px) {
   .total {
     font-size: 14px;
-    width:90px;
+    min-width:100px;
   }
   .close {
     width: 20px;
@@ -116,9 +121,20 @@
   .imgBlock span {
     font-size: 18px;
   }
+  .total {
+    font-size: 14px;
+    min-width: 90px;
+  }
 }
 
 @media (max-width: 700px) {
+  .wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 430px) {
   .wrapper {
     flex-direction: column;
     align-items: center;

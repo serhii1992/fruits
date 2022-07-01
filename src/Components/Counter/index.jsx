@@ -20,7 +20,7 @@ function Counter({ totalObj, calcSum, ...itemKeys }) {
           }}
         ></button>
 
-        <div className={styles.count}> {totalObj?.totalKg.toFixed(2) ?? "0.00"}</div>
+        <div className={styles.count}> {totalObj?.totalKg.toFixed(1) ?? "0.0"}</div>
 
         <button
           className={styles.inc}

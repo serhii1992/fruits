@@ -5,13 +5,12 @@ import {Routes, Route } from "react-router-dom";
 
 
 function App() {
-
-
+  
   return (
     <div>
       <Header />
-      <Routes basename={process.env.PUBLIC_URL}>
-        <Route path="/" element={<Main />} />
+      <Routes >
+        <Route path="./" element={<Main />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="*" element={<Main />} />
       </Routes>

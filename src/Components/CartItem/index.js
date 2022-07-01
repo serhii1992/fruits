@@ -22,10 +22,10 @@ function CartItem({ name, price, srcImg, minOrder, sale }) {
       <div className={styles.content}>
         <div className={styles.counter}>
           <Counter minOrder={minOrder} totalObj={totalObj} calcSum={calcSum} />
-          <div className={styles.price}>x {totalObj?.price.toFixed(2) || "0"} $/kg</div>
+          <div className={styles.price}>x {totalObj?.price.toFixed(1) || "0"} $/kg</div>
         </div>
         <div className={styles.total}>
-          <div> = {totalObj?.totalPrice?.toFixed(2) || "0.00"} $</div>
+          <div> = {totalObj?.totalPrice?.toFixed(1) || "0.0"} $</div>
           <div
             onClick={() => {
               dispatch(removeItemIncart(name));

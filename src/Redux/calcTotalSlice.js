@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { sum, calcForSale } from "../utils";
 
 const initialState = {
-  totalItem: [{ name: "", price: 0, totalKg: 0, totalPrice: 0 }],
+  totalItem: [],
   totalPriceItems: 0,
   totalKgItems: 0,
 };
@@ -13,7 +13,7 @@ export const calcTotalSlice = createSlice({
   reducers: {
     calcTotalItem(state, action) {
       const {coeff,minOrder,name,price} = action.payload
-      const {discountCoeff, discountKg, everyKg}=action.payload?.sale
+      const {discountCoeff, everyKg}=action.payload?.sale
 
       const obj = state.totalItem.find((el) => el.name === name);
 
@@ -23,11 +23,8 @@ export const calcTotalSlice = createSlice({
         state.totalItem = [...state.totalItem, { ...action.payload, totalKg,  totalPrice},
         ];
       } else {
-        
-        debugger
         obj.totalKg = +(obj.totalKg + obj.minOrder * coeff).toFixed(2);
-        debugger
-        obj.totalPrice = calcForSale(obj.totalKg, price, discountKg, everyKg , discountCoeff )
+        obj.totalPrice = calcForSale(obj.totalKg, price, everyKg , discountCoeff )
       }
     },
     calcTotalPriceAndKgItems(state) {

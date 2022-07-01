@@ -9,14 +9,15 @@ function CartButton() {
   return (
     <Link to ='/cart'>
       <div className={style.cartButton}>
+      <div className={style.totalCount}>
+          <div>Cart</div>
+          <div>{totalPriceItems.toFixed(1) || "0.0"} $</div>
+        </div>
         <div className={style.count}>
-          <div>{totalKgItems.toFixed(2)}</div>
+          <div>{totalKgItems.toFixed(1)}</div>
           <img className={style.cartIcon} src={cart} alt="cart" />
         </div>
-        <div className={style.totalCount}>
-          <div>Cart</div>
-          <div>{totalPriceItems.toFixed(2) || "0.00"} $</div>
-        </div>
+
       </div>
     </Link>
   );

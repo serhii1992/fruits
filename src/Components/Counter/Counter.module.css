@@ -34,7 +34,7 @@
   position: relative;
   font-size: 16px;
   text-align: center;
-  width: 60px;
+  min-width: 60px;
   height: 40px;
   line-height: 40px;
   border-top: 1px solid #5ed0d5;
@@ -89,20 +89,31 @@
   cursor: pointer;
 }
 
-
-@media (max-width: 1180px) {
+@media (max-width: 1105px) {
+  .dec {
+    min-width: 35px;
+    height: 35px;
+  }
   .count {
     font-size: 14px;
+    min-width: 45px;
+    height: 35px;
   }
+  
+  .inc {
+    min-width: 35px;
+    height: 35px;
+  }
+
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 700px) {
   .dec {
     min-width: 30px;
     height: 30px;
   }
   .count {
-    min-width: 45px;
+    min-width: 35px;
     height: 30px;
     line-height: 30px;
   }
@@ -112,22 +123,4 @@
   }
 }
 
-@media (max-width: 430px) {
-  .dec {
-    min-width: 40px;
-    height: 40px;
-  }
-  .count {
-    min-width: 60px;
-    height: 40px;
-    line-height: 40px;
-  }
-  .inc {
-    min-width: 40px;
-    height: 40px;
-  }
-  .count {
-    font-size: 16px;
-  }
-}
 

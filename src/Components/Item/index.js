@@ -22,7 +22,7 @@ function Item({ minOrder, srcImg, name, price, sale }) {
         />
         <div className={styles.totalBlock}>
           <p className={styles.totalBlockText}>total<br/>price</p>
-          <p className={styles.totalBlockPrice}>{totalObj?.totalPrice?.toFixed(2) ?? "0.00"} $</p>
+          <p className={styles.totalBlockPrice}>{totalObj?.totalPrice?.toFixed(1) ?? "0.0"} $</p>
         </div>
       </div>
     </div>
