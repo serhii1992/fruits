@@ -16,7 +16,7 @@ function CartItem({ name, price, srcImg, minOrder, sale }) {
   return (
     <div className={styles.wrapper}>
       <div className={styles.imgBlock}>
-        <img src={srcImg} />
+        <img src={srcImg} alt = 'img'/>
         <span>{name}</span>
       </div>
       <div className={styles.content}>

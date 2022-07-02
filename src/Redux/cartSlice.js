@@ -9,7 +9,10 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      if (!state.goods.find((el) => el.name === action.payload.name ) && action.payload.hasOwnProperty('name')) {
+      if (
+        !state.goods.find((el) => el.name === action.payload.name) &&
+        action.payload.hasOwnProperty("name")
+      ) {
         state.goods = [...state.goods, action.payload];
       }
     },

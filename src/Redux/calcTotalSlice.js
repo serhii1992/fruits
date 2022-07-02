@@ -12,19 +12,18 @@ export const calcTotalSlice = createSlice({
   initialState,
   reducers: {
     calcTotalItem(state, action) {
-      const {coeff,minOrder,name,price} = action.payload
-      const {discountCoeff, everyKg}=action.payload?.sale
+      const { coeff, minOrder, name, price } = action.payload;
+      const { discountCoeff, everyKg } = action.payload?.sale;
 
       const obj = state.totalItem.find((el) => el.name === name);
 
       if (!obj) {
-        const totalKg = +minOrder.toFixed(2)
-        const totalPrice = price * totalKg
-        state.totalItem = [...state.totalItem, { ...action.payload, totalKg,  totalPrice},
-        ];
+        const totalKg = +minOrder.toFixed(2);
+        const totalPrice = price * totalKg;
+        state.totalItem = [...state.totalItem, { ...action.payload, totalKg, totalPrice }];
       } else {
         obj.totalKg = +(obj.totalKg + obj.minOrder * coeff).toFixed(2);
-        obj.totalPrice = calcForSale(obj.totalKg, price, everyKg , discountCoeff )
+        obj.totalPrice = calcForSale(obj.totalKg, price, everyKg, discountCoeff);
       }
     },
     calcTotalPriceAndKgItems(state) {
@@ -37,6 +36,7 @@ export const calcTotalSlice = createSlice({
   },
 });
 
-export const { calcTotalItem, removeFromTotalItem, calcTotalPriceAndKgItems } = calcTotalSlice.actions;
+export const { calcTotalItem, removeFromTotalItem, calcTotalPriceAndKgItems } =
+  calcTotalSlice.actions;
 
 export default calcTotalSlice.reducer;

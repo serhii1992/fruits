@@ -1,10 +1,5 @@
-
 function Loader() {
-  return (
-    <div className="lds-hourglass">
-
-    </div>
-  );
+  return <div className="lds-hourglass"></div>;
 }
 
 export default Loader;

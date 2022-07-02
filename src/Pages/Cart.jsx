@@ -5,8 +5,8 @@ function Cart() {
   const totalItem = useSelector((state) => state.calcTotalReducer.totalItem);
   const goods = useSelector((state) => state.cartReducer.goods);
   const { totalPriceItems } = useSelector((state) => state.calcTotalReducer);
-  
-  const isCartEmpty = totalItem.every((el) => !el.totalKg );
+
+  const isCartEmpty = totalItem.every((el) => !el.totalKg);
 
   return (
     <div className="cartWrapper container">

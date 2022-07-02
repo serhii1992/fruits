@@ -1,10 +1,10 @@
 import { addToCart } from "../../redux/cartSlice";
-import {useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import styles from "./Counter.module.css";
 
 function Counter({ totalObj, calcSum, ...itemKeys }) {
   const dispatch = useDispatch();
-  
+
   const addItemToCart = (obj) => {
     dispatch(addToCart(obj));
   };

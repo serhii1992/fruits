@@ -16,7 +16,7 @@
   margin-left: 7px;
 }
 
-.minOrder{
+.minOrder {
   color: #8a8a8a;
   opacity: 0.5;
   font-size: 14px;
@@ -40,7 +40,6 @@
   border-top: 1px solid #5ed0d5;
   border-bottom: 1px solid #5ed0d5;
 }
-
 
 .inc {
   cursor: pointer;
@@ -98,13 +97,13 @@
     font-size: 14px;
     min-width: 45px;
     height: 35px;
+    line-height: 35px;
   }
-  
+
   .inc {
     min-width: 35px;
     height: 35px;
   }
-
 }
 
 @media (max-width: 700px) {
@@ -123,4 +122,18 @@
   }
 }
 
-
+@media (max-width: 430px) {
+  .dec {
+    min-width: 35px;
+    height: 35px;
+  }
+  .count {
+    min-width: 40px;
+    height: 35px;
+    line-height: 35px;
+  }
+  .inc {
+    min-width: 35px;
+    height: 35px;
+  }
+}

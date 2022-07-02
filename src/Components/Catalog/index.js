@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchGoods,  setSelectedCategory} from "../../redux/goodsSlice";
+import { fetchGoods, setSelectedCategory } from "../../redux/goodsSlice";
 import style from "./Catalog.module.css";
 
 function Catalog() {
   const dispatch = useDispatch();
   const [visibleModal, setVisibleModal] = useState(false);
-  const {category, selectedCategory} = useSelector( state => state.goodsReducer)
+  const { category, selectedCategory } = useSelector((state) => state.goodsReducer);
 
   useEffect(() => {
-    dispatch(fetchGoods(selectedCategory))
-  }, [selectedCategory]);
+    dispatch(fetchGoods(selectedCategory));
+  }, [selectedCategory, dispatch]);
 
-  const changeSelectedCategory = (category)=>{
-    dispatch(setSelectedCategory(category))
-  }
+  const changeSelectedCategory = (category) => {
+    dispatch(setSelectedCategory(category));
+  };
 
   return (
     <div
@@ -33,7 +33,7 @@ function Catalog() {
       <div className={`${style.modal} ${visibleModal && style.visible}`}>
         {category.map((el) => (
           <span
-            className={el === selectedCategory ? style.active : ''}
+            className={el === selectedCategory ? style.active : ""}
             onClick={() => {
               changeSelectedCategory(el);
             }}

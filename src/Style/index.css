@@ -181,7 +181,6 @@ a {
   font-size: 40px;
 }
 
-
 /* Cart page */
 .cartWrapper {
   font-family: Arial, Helvetica, sans-serif serif;
@@ -242,7 +241,6 @@ a {
     transform: rotate(1800deg);
   }
 }
-
 
 @media (max-width: 800px) {
   .mainTitleBloc {

@@ -8,7 +8,11 @@ function Item({ minOrder, srcImg, name, price, sale }) {
 
   return (
     <div className={styles.wrapper}>
-      {sale && <div className={styles.saleBlock}>sale - {100 - sale.discountCoeff * 100}% discount for every {sale.everyKg} kg </div>}
+      {sale && (
+        <div className={styles.saleBlock}>
+          sale - {100 - sale.discountCoeff * 100}% discount for every {sale.everyKg} kg{" "}
+        </div>
+      )}
       <InfoBlock srcImg={srcImg} price={price} name={name} />
       <div className={styles.couterBlock}>
         <Counter
@@ -21,7 +25,11 @@ function Item({ minOrder, srcImg, name, price, sale }) {
           srcImg={srcImg}
         />
         <div className={styles.totalBlock}>
-          <p className={styles.totalBlockText}>total<br/>price</p>
+          <p className={styles.totalBlockText}>
+            total
+            <br />
+            price
+          </p>
           <p className={styles.totalBlockPrice}>{totalObj?.totalPrice?.toFixed(1) ?? "0.0"} $</p>
         </div>
       </div>
